@@ -18,8 +18,11 @@ def ask_question(eq):
 def eq_generator(y=10):
     #Create x number of factoring problems
     for eq in range(y+1):
-        eq = x ** 2 + random.randint(1,8) * x + random.randint(5, 25)
-        ask_question(eq)
+        term1 = random.randint(1, 10)
+        term2 = random.randint(5, 30)
+        if term1 // term2 == 0:
+            eq = x ** 2 + term1 * x + term2
+            ask_question(eq)
 
 
 if __name__ == '__main__': main()
