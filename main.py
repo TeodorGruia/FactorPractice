@@ -1,6 +1,10 @@
-"""Practice factoring"""
-"""As of right now, unfactorable problems are included and therefore won't factor.
-This will have to be changed so that the equations actually factor"""
+"""
+Program name: FactorPractice
+Date of first writing: 07/02/2023
+Author: Sam Goldberg
+"""
+
+
 import sympy
 from sympy import Symbol
 import random
@@ -27,7 +31,8 @@ def eq_generator(t1, t2):
      ask_question(eq)
 
 def is_factorable(term, tterm):
-    if (sympy.isprime(term) == True) and (sympy.isprime(tterm) == True):
+    #Stuck at trying to make sure the factors for term one are the same as term two, but only used in adding
+    #if (sympy.isprime(term) == True) and (sympy.isprime(tterm) == True) and 
             term_generator()
 
 
