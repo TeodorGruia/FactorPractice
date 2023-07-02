@@ -7,7 +7,7 @@ import random
 
 x = Symbol("x")
 def main():
-    eq_generator(3)
+    term_generator()
 
 def ask_question(eq):
     print("factor this equation:", eq)
@@ -15,14 +15,20 @@ def ask_question(eq):
     print(answers)
     print(sympy.factor(eq))
 
-def eq_generator(y=10):
-    #Create x number of factoring problems
-    for eq in range(y+1):
-        term1 = random.randint(1, 10)
-        term2 = random.randint(5, 30)
-        if term1 // term2 == 0:
-            eq = x ** 2 + term1 * x + term2
-            ask_question(eq)
+def term_generator():
+    #Create two factorable terms
+    term1 = random.randint(2, 4)
+    term2 = random.randint(8, 12)
+    is_factorable(term1, term2)
+    eq_generator(term1, term2)
+
+def eq_generator(t1, t2):
+     eq = x**2 + t1*x + t2
+     ask_question(eq)
+
+def is_factorable(term, tterm):
+    if (sympy.isprime(term) == True) and (sympy.isprime(tterm) == True):
+            term_generator()
 
 
 if __name__ == '__main__': main()
